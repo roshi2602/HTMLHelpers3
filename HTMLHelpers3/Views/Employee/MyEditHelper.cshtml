@@ -1,0 +1,44 @@
+﻿@model HTMLHelpers3.Models.Employee
+
+
+<!--EditFor() is strongly typed and requires lambda expression
+    -->
+
+<table>
+    <tr>
+        <td>
+            Eid-      @Html.EditorFor(x => x.Eid);
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Ename-   @Html.EditorFor(x => x.Ename);
+        </td>
+    </tr>
+    <tr>
+        <td>
+            newEnrollment-        @Html.EditorFor(x => x.newEnrollment);
+        </td>
+    </tr>
+    <tr>
+        <td>
+            DOB-           @Html.EditorFor(x => x.DOB);
+        </td>
+    </tr>
+
+</table>
+
+<!--using the concept of template helpers
+    this will give the entire employee data
+    using attherate Html.Display(“EmployeeData”) templated helper method to render the data.
+    using attherate Html.DisplayFor(x=>x.)
+    -->
+<h2>Employee details</h2>
+@Html.DisplayFor(model => model);
+
+<!--  using the concept of customized template helpers
+    The customized display templates must be stored in a sub-folder with the name DisplayTemplates.
+    Similarly, the customized Editor templates must be stored in a sub-folder with the name EditorTemplates.
+
+    These sub-folders can be created within the “Shared” folder
+-->
